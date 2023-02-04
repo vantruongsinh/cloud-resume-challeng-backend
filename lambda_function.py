@@ -10,13 +10,11 @@ def lambda_handler(event, context):
     today = date.today()
     today_str = today.strftime("%A %d-%B-%Y")
     
-    TABLE_NAME = "VisitorCount"
+    TABLE_NAME = "VisitorCount1"
     REGION = 'us-east-1'
     
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table(TABLE_NAME)
-    
-    #today_str = 'Monday 30-January-2023'
     
     today_count = table.get_item(TableName=TABLE_NAME,Key={'Date':today_str})
     count = 0
