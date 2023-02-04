@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     today = date.today()
     today_str = today.strftime("%A %d-%B-%Y")
     
-    TABLE_NAME = "VisitorCount1"
+    TABLE_NAME = "VisitorCount"
     REGION = 'us-east-1'
     
     dynamodb = boto3.resource('dynamodb')
